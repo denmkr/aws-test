@@ -17,8 +17,5 @@ RUN npm install -g @angular/cli@8.3.18
 RUN npm install d3
 RUN npm install tslib
 
-# tell the port number the container should expose
-EXPOSE 5000
-
 # Start development server
 CMD sh -c "npm run start:docker"
