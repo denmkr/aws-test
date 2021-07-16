@@ -1,16 +1,24 @@
-FROM python:3
+# Declare which image to pull
+# We use a minimal system with NodeJS and NPM installed
+FROM node:lts-buster-slim
 
-# set a directory for the app
-WORKDIR /usr/src/app
+# Set working directory
+ENV APP_DIR=/var/opt/annotation
 
-# copy all the files to the container
-COPY . .
+# Copy data
+COPY ./ ${APP_DIR}
 
-# install dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+# Set working directory
+WORKDIR ${APP_DIR}
+
+# Install requirements
+RUN npm install
+RUN npm install -g @angular/cli@8.3.18
+RUN npm install d3
+RUN npm install tslib
 
 # tell the port number the container should expose
 EXPOSE 5000
 
-# run the command
-CMD ["python", "./app.py"]
+# Start development server
+CMD sh -c "npm run start:docker"

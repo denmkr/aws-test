@@ -1,0 +1,119 @@
+.events-controls {
+	pointer-events: none;
+	opacity: 0.3;
+}
+
+.events-controls.visible {
+	pointer-events: auto;
+	opacity: 1;
+}
+
+.events-controls .button-block {
+	margin-bottom: 8px;
+	display: none;
+}
+
+.events-controls .shot-block {
+	padding: 10px;
+	border-radius: 6px;
+	background: #f1f1f1;
+	display: none;
+}
+
+.events-controls .shot-block.visible, .events-controls .button-block.visible {
+	display: block;
+}
+
+.events-controls .button-block .button {
+	margin: 0;
+	background: #fff;
+	color: steelblue;
+	border: 1px solid steelblue;
+	padding: 4px 9px;
+	font-size: 13px;
+}
+
+.events-controls .button-block .button.active {
+	background: steelblue;
+	color: #fff;
+}
+
+.events-controls .button-block .button:first-child {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	border-right: none;
+}
+
+.events-controls .button-block .button:last-child {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.events-controls .button-block.multi .button:nth-child(2) {
+	border-radius: 0;
+	border-right: none;
+}
+
+.button {
+	cursor: pointer;
+}
+
+.video-controls {
+	margin-top: 25px;
+}
+
+.green {
+	background: green;
+}
+
+.gray {
+	border: 1px solid #999 !important;
+	color: #333 !important;
+	background: #fff !important;
+	border-radius: 6px !important;
+}
+
+.undo {
+	background: gray;
+	float: right;
+}
+
+.blue {
+	background: steelblue;
+}
+
+.events-controls .button-block .buttons {
+	display: inline-block;
+}
+
+.button-label {
+	display: inline-block;
+	color: #444;
+	display: block;
+	margin-bottom: 3px;
+	min-width: 80px;
+}
+
+.let-button {
+	float: right;
+}
+
+.events-controls .button-block .button-inline {
+	vertical-align: top;
+	display: inline-block;
+	margin-right: 12px;
+}
+
+.events-controls .button-block .button-inline:last-child {
+	margin-right: 0;
+}
+
+.save-button {
+	opacity: 0.3;
+	cursor: default;
+}
+
+.save-button.visible {
+	opacity: 1;
+	cursor: pointer;
+}

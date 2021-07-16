@@ -1,0 +1,178 @@
+.button {
+	display: inline-block;
+	padding: 4px 8px;
+	font-size: 12px;
+	border: 1px solid transparent;
+	width: auto;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
+.buttons.border-left {
+	border-left: 1px solid #ccc;
+	padding-left: 6px;
+}
+
+.red {
+	background: rgb(204, 27, 27);
+}
+
+.green {
+	background: green;
+}
+
+.border-blue {
+	color: steelblue;
+	background: #fff;
+	border-color: steelblue;
+}
+
+.border-gray {
+	color: #333;
+	background: #fff;
+	border-color: gray;
+}
+
+.border-red {
+	border-color: rgb(204, 27, 27);
+	background: #fff;
+	color: rgb(204, 27, 27);
+}
+
+.inline {
+	display: inline-block;
+}
+
+#players-col div {
+	font-weight: 600;
+}
+
+#players-col, #sets-col, #points-col {
+	padding: 0 8px;
+}
+
+.set-col {
+	padding: 0 3px;
+}
+
+#players-col {
+	border-right: 1px solid #ccc;
+}
+
+#points-col div, .set-col div, #players-col div {
+	min-height: 28px;
+	line-height: 28px;
+}
+
+.set-label {
+	min-height: 20px !important;
+	line-height: 20px !important;
+	color: #999;
+	font-size: 13px;
+}
+
+#points-col {
+	background: #eee;
+	border-radius: 6px;
+}
+
+#points-col div {
+	font-weight: 600;
+}
+
+.buttons {
+	margin-left: 10px;
+}
+
+.button.undo-button {
+	background: gray;
+	margin-top: 14px;
+}
+
+#score-block {
+	display: inline-block;
+	padding: 8px;
+	border-right: 1px solid #ddd;
+}
+
+.buttons .players-block {
+	margin-bottom: 10px;
+}
+
+.button-block .button-label {
+	min-width: 0;
+}
+
+.button-block .button-label, .button-block .buttons {
+	display: inline-block;
+}
+
+.button-block .button {
+	margin: 0;
+	background: #fff;
+	color: steelblue;
+	border: 1px solid steelblue;
+	padding: 4px 8px;
+	font-size: 13px;
+}
+
+.button-block .button.active {
+	background: steelblue;
+	color: #fff;
+}
+
+.button-block .button:first-child {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	border-right: none;
+}
+
+.button-block .button:last-child {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.button-block.multi .button:nth-child(2) {
+	border-radius: 0;
+	border-right: none;
+}
+
+#score-block, #points-block {
+	vertical-align: top;
+}
+
+#points-block {
+	padding: 10px;
+}
+
+.point-buttons {
+	background: #eee;
+	border-radius: 6px;
+	padding: 7px 6px;
+	margin-top: 12px;
+}
+
+#points-block .button {
+	padding: 4px 8px !important;
+	font-size: 13px;
+}
+
+.point-buttons .button {
+	display: none;
+}
+
+.point-buttons .button.active {
+	display: inline-block;
+}
+
+.disactivated {
+	pointer-events: none;
+	opacity: 0.3;
+}
+
+#point-let-button {
+	margin-left: 8px;
+	margin-right: 0;
+	float: right;
+	margin-top: 0;
+}

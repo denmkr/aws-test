@@ -1,0 +1,67 @@
+<div class="controls">
+	<div class="files_panel">
+		<div class="files_text">Upload:</div>
+		<label class="upload_label" for="video_file">{{videoButtonText}}</label>
+	    <input id="video_file" name="video_file" type="file" class="hidden" (change)="fileChanged($event)" />
+	    <label class="upload_label" for="csv_file">{{ballDataText}}</label>
+	    <input id="csv_file" name="csv_file" type="file" class="hidden" (change)="positionsFileChanged($event)" />
+	    <label class="upload_label" for="players_csv_file">{{playersDataText}}</label>
+	    <input id="players_csv_file" name="players_csv_file" type="file" class="hidden" (change)="playersPositionsFileChanged($event)" />
+	    <div class="start_button button" (click)="start()">Start</div>
+	    <div #settingsButton class="button" id="settings_button" (click)="handSettingsToggle()">Hand</div>
+
+	    <div #settingsWindow class="settings_menu" [class.active]="handSettingsActive" id="settings-modal">
+			<div class="button-block visible">
+				<div class="button-label">P1:</div>
+				<div class="buttons">
+					<div [class.active]="!p1RightButtonActive" (click)="onP1LeftButtonClick()" class="button">Left</div>
+					<div [class.active]="p1RightButtonActive" (click)="onP1RightButtonClick()" class="button">Right</div>
+				</div>
+			</div>
+			<div class="button-block visible">
+				<div class="button-label">P2:</div>
+				<div class="buttons">
+					<div [class.active]="!p2RightButtonActive" (click)="onP2LeftButtonClick()" class="button">Left</div>
+					<div [class.active]="p2RightButtonActive" (click)="onP2RightButtonClick()" class="button">Right</div>
+				</div>
+			</div>
+		</div>
+
+	    <div class="button" (click)="syncBack()">< Sync</div>
+	    <div class="button" (click)="syncForward()">Sync ></div>
+	</div>
+	<div class="files_panel">
+		<div class="files_text">Files:</div>
+	    <label class="upload_label" for="points_file">Points</label>
+		<input id="points_file" type="submit" (click)="downloadPointsCSV()" class="hidden" />
+		<label class="upload_label" for="games_file">Games</label>
+		<input id="games_file" type="submit" (click)="downloadGamesCSV()" class="hidden" />
+		<label class="upload_label" for="sets_file">Sets</label>
+		<input id="sets_file" type="submit" (click)="downloadSetsCSV()" class="hidden" />
+		<label class="upload_label" for="events_file">Events</label>
+		<input id="events_file" type="submit" (click)="downloadEventsCSV()" class="hidden" />
+	</div>
+</div>
+<div class="calibration-controls">
+	<div *ngIf="isCalibrationMode == false" class="button" (click)="startCalibration()">Calibrate</div>
+	<div *ngIf="isCalibrationMode && isCalibrationReady == false" class="button" (click)="stopCalibration()">Stop calibration</div>
+	<div *ngIf="isCalibrationMode && isCalibrationReady" class="button complete-button" (click)="finishCalibration()">Complete</div>
+	<div *ngIf="isCalibrationMode" class="button cancel-button" (click)="restore()">Undo</div>
+</div>
+
+<div (mouseup)="canvasMouseUp()" class="video-container">
+	<video #video id="video" (pause)="videoPaused()" (play)="videoPlaying()" (loadeddata)="videoLoaded()" width="1000" height="562"></video>
+	<canvas (click)="canvasClicked($event)" #frame id="frame" width="1000" height="562">Your browser does not support the HTML5 canvas tag.</canvas>
+	<div (mousedown)="labelMouseDown()" #p1Label id="p1Label" class="object-label">
+		<div class="point"></div>
+		<a>P1</a>
+	</div>
+	<div (mousedown)="labelMouseDown()" #p2Label id="p2Label" class="object-label">
+		<div class="point"></div>
+		<a>P2</a>
+	</div>
+	<div (mousedown)="labelMouseDown()" #ballLabel id="ballLabel" class="object-label">
+		<div class="point"></div>
+		<a>Ball</a>
+	</div>
+</div>

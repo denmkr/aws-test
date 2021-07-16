@@ -1,0 +1,277 @@
+.video-container {
+	position: relative;
+	width: auto;
+	display: inline-block;
+
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */ /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently */
+}
+
+canvas#frame {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+}
+
+.controls {
+	padding: 10px 0;
+	border-bottom: 1px solid #ddd;
+}
+
+.files_panel {
+	width: calc(100% - 400px);
+	padding: 0 10px;
+	box-sizing: border-box;
+}
+
+.files_panel:last-child {
+	text-align: right;
+	width: 400px;
+}
+
+.files_panel .files_text {
+	margin-right: 8px;
+	margin-left: 4px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.files_panel .start_button {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 4px 9px;
+	background: green;
+	border-radius: 5px;
+	color: #fff;
+	margin: 0 4px;
+	cursor: pointer;
+}
+
+#settings_button {
+	background: gray;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.files_panel .upload_label {
+	padding: 3px 7px;
+	color: steelblue;
+	border-radius: 5px;
+	border: 1px solid steelblue;
+	margin: 0 4px;
+	max-width: 110px;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: middle;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	cursor: pointer;
+}
+
+.button {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.controls > * {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.calibration-controls {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 330px;
+	z-index: 2;
+	padding: 10px;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.object-label {
+	position: absolute;
+	z-index: 10;
+	color: #fff;
+	top: 0;
+	left: 0;
+	display: none;
+	margin-top: -5px;
+	margin-left: -5px;
+
+	cursor: pointer;
+}
+
+.object-label:hover a {
+	border-color: #fff;
+}
+
+.object-label .point {
+	display: block;
+	width: 6px;
+	height: 6px;
+	border: 2px solid;
+	border-radius: 90px;
+}
+
+#p1Label .point {
+	border-color: steelblue;
+}
+
+#p2Label .point {
+	border-color: orange;
+}
+
+#ballLabel .point {
+	border-color: red;
+}
+
+.object-label a {
+	display: block;
+	margin-top: 5px;
+	border-radius: 90px;
+	padding: 0 5px;
+	margin-left: -9px;
+	font-size: 12px;
+
+	border: 2px solid transparent;
+}
+
+#ballLabel a {
+	margin-left: -13px;
+}
+
+.object-label a:after {
+	content: "F";
+	background: red;
+	color: #fff;
+	padding: 1px 5px;
+	text-align: center;
+	font-size: 13px;
+	border-radius: 90px;
+	margin-left: 6px;
+
+	display: none;
+}
+
+.object-label.forehand a, .object-label.backhand a {
+	margin-left: -24px;
+}
+
+.object-label.forehand a:after {
+	content: "F";
+	display: inline-block;
+}
+
+.object-label.backhand a:after {
+	content: "B";
+	display: inline-block;
+}
+
+#p1Label a {
+	background: steelblue;
+}
+
+#p2Label a {
+	background: orange;
+}
+
+#ballLabel a {
+	background: red;
+}
+
+/* =============================================================================
+Image Loupe JS v0.0.1 | MIT License | https://github.com/alecrios/image-loupe-js
+============================================================================= */
+
+[data-loupe-wrapper] {
+	position: relative;
+}
+
+[data-loupe-image] {
+	display: block;
+	cursor: none;
+}
+
+[data-loupe-enlarged-image] {
+	width: auto;
+	max-width: none;
+}
+
+[data-loupe] {
+	position: absolute;
+	overflow: hidden;
+	width: 75px;
+	height: 75px;
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	border-radius: 50%;
+	box-shadow: 0 0 24px 0 rgba(192, 192, 192, 0.5);
+	opacity: 0;
+	pointer-events: none;
+}
+
+.hidden {
+	display: none;
+}
+
+.button-block {
+	margin-bottom: 5px;
+}
+
+.button-block .buttons {
+	display: inline-block;
+}
+
+#settings-modal .button-label {
+	display: inline-block !important;
+	color: #444;
+	margin-bottom: 3px;
+	min-width: 40px;
+}
+
+.button-block .button {
+	margin: 0;
+	background: #fff;
+	color: steelblue;
+	border: 1px solid steelblue;
+	padding: 4px 9px;
+	font-size: 13px;
+}
+
+.button-block .button.active {
+	background: steelblue;
+	color: #fff;
+}
+
+.button-block .button:first-child {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	border-right: none;
+}
+
+.button-block .button:last-child {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+#settings-modal {
+	position: fixed;
+	z-index: 1000;
+	background: #fff;
+	padding: 10px 15px;
+	border-radius: 5px;
+	border: 1px solid #ddd;
+	top: 46px;
+	left: 0;
+	display: none;
+}
+
+#settings-modal.active {
+	display: block;
+}

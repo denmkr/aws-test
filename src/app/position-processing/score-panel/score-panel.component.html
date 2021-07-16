@@ -1,0 +1,61 @@
+<div id="score-block">
+	<div id="score-table" class="inline">
+		<div id="players-col" class="inline">
+			<div>P1</div>
+			<div>P2</div>
+		</div>
+		<div id="sets-col" class="inline">
+			<ng-container *ngFor="let set of sets; index as i;">
+				<div class="set-col inline" id="set1">
+					<div class="set-label">{{i+1}}</div>
+					<div id="p1-set1">{{set.p1}}</div>
+					<div id="p2-set1">{{set.p2}}</div>
+				</div>
+			</ng-container>
+			<div class="set-col inline">
+				<div class="set-label">{{currentSet}}</div>
+				<div id="p1-set1">{{games.p1}}</div>
+				<div id="p2-set1">{{games.p2}}</div>
+			</div>
+		</div>
+		<div id="points-col" class="inline">
+			<div id="p1-points">{{points.p1}}</div>
+			<div id="p2-points">{{points.p2}}</div>
+		</div>
+	</div>
+
+	<div class="buttons inline border-left">
+		<div><div class="button border-blue" [class.disactivated]="!finishGameButtonActive" (click)="finishGame()">Finish Game</div></div>
+		<div><div class="button border-blue" [class.disactivated]="!finishSetButtonActive" (click)="finishSet()">Finish Set</div></div>
+	</div>
+
+	<div>
+		<div class="button undo-button" [class.disactivated]="!resetPointButtonActive" (click)="reset()">Reset point</div>
+		<div class="button undo-button" [class.disactivated]="!resetGameButtonActive" (click)="resetGame()">Reset game</div>
+	</div>
+</div>
+
+<div id="points-block" class="inline">
+	<div class="button-block inline players-block">
+		<div class="button-label">Player:</div>
+		<div class="buttons">
+			<div class="button" [class.active]="p1ButtonActive" (click)="p1ButtonClick()">P1</div>
+			<div class="button" [class.active]="!p1ButtonActive" (click)="p2ButtonClick()">P2</div>
+		</div>
+	</div>
+	<div class="button inline border-gray" id="point-let-button" (click)="letPoint()">Point Let</div>
+
+	<div class="point-buttons">
+		<div class="win-buttons">
+			<div class="button inline green" [class.active]="winButtonActive"  (click)="winButtonClick()">Winner</div>
+			<div class="button inline green" [class.active]="aceButtonActive"  (click)="aceButtonClick()">Ace</div>
+			<div class="button inline border-gray" [class.active]="letButtonActive"  (click)="letButtonClick()">Let</div>
+		</div>
+		<div class="error-buttons">
+			<div class="button inline border-red" [class.active]="forcedErrorButtonActive" (click)="forcedErrorButtonClick()">Forced Error</div>
+			<div class="button inline red" [class.active]="unforcedErrorButtonActive" (click)="unforcedErrorButtonClick()">Unforced Error</div>
+			<div class="button inline border-red" [class.active]="faultButtonActive" (click)="faultButtonClick()">Fault</div>
+			<div class="button inline red" [class.active]="doubleFaultButtonActive" (click)="doubleFaultButtonClick()">Double Fault</div>
+		</div>
+	</div>
+</div>

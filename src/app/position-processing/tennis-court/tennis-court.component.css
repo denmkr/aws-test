@@ -1,0 +1,58 @@
+@-webkit-keyframes blinkingFillColor {
+	0%		{ fill-opacity: 1;}
+	25%		{ fill-opacity: 0;}
+	50%		{ fill-opacity: 1;}
+	75%		{ fill-opacity: 0;}
+	100%	{ fill-opacity: 1;}
+}
+
+@keyframes blinkingFillColor {
+	0%		{ fill-opacity: 1;}
+	25%		{ fill-opacity: 0;}
+	50%		{ fill-opacity: 1;}
+	75%		{ fill-opacity: 0;}
+	100%	{ fill-opacity: 1;}
+}
+
+@-webkit-keyframes blinkingRedColor {
+	0%		{ fill: red;}
+	25%		{ fill: transparent;}
+	50%		{ fill: red;}
+	75%		{ fill: transparent;}
+	100%	{ fill: red;}
+}
+
+@keyframes blinkingRedColor {
+	0%		{ fill: red;}
+	25%		{ fill: transparent;}
+	50%		{ fill: red;}
+	75%		{ fill: transparent;}
+	100%	{ fill: red;}
+}
+
+.blink-red {
+	fill-opacity: 1;
+	-webkit-animation: blinkingRedColor 2s infinite;
+	        animation: blinkingRedColor 2s infinite;
+}
+
+.blink {
+	fill-opacity: 1;
+	-webkit-animation: blinkingFillColor 2s infinite;
+	        animation: blinkingFillColor 2s infinite;
+}
+
+.completed {
+	fill-opacity: 1;
+	fill: green;
+}
+
+#player-circles circle:hover, #ball-circle circle:hover {
+	cursor: pointer;
+	stroke: #111;
+	stroke-width: 0.3px;
+}
+
+.text-label {
+	font-size: 3.2px !important;
+}

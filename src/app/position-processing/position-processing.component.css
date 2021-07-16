@@ -1,0 +1,68 @@
+#tennis-court-block {
+	width: 330px;
+	padding-top: 60px;
+	z-index: 1;
+	padding-bottom: 330px;
+	overflow-y: scroll;
+}
+
+#video-block {
+	width: calc(100% - 330px);
+	z-index: 2;
+	padding-bottom: 140px;
+	/*overflow-y: scroll;*/
+}
+
+app-tennis-court {
+	display: block;
+}
+
+#control-panel-block {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	padding: 10px;
+	text-align: left;
+	width: 329px;
+	box-sizing: border-box;
+	border-top: 1px solid #ddd;
+	background: #fff;
+	border-left: 1px solid #fff;
+
+	z-index: 3;
+}
+
+.bottom-block {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: calc(100% - 330px);
+	box-sizing: border-box;
+	border-top: 1px solid #ddd;
+	display: inline-block;
+	z-index: 2;
+	background: #fff;
+}
+
+#score-panel-block {
+	width: 530px;
+	vertical-align: top;
+	display: inline-block;
+	box-sizing: border-box;
+}
+
+#data-panel-block {
+	display: inline-block;
+	border-left: 1px solid #ddd;
+	vertical-align: top;
+	width: calc(100% - 530px);
+	padding: 10px;
+	min-height: 140px;
+	box-sizing: border-box;
+}
+
+.inactive {
+	position: fixed;
+	pointer-events: none;
+	opacity: 0.3;
+}

@@ -1,0 +1,19 @@
+<div class="event-data-header">
+	<a class="timestamp">timestamp</a><a class="event">event</a><a class="player">player</a><a class="strokeside">strokeSide</a><a class="stroketype">strokeType</a><a class="player1">player1</a><a class="player2">player2</a><a class="ball">ball</a>
+</div>
+<div #dataContent class="event-data-content">
+	<div class="event-data">
+		<ng-container *ngFor="let row of data;">
+			<div>
+				<a class="timestamp">{{row.timestamp}}</a>
+				<a class="event">{{row.eventType}}</a>
+				<a class="player">{{row.hittingPlayerID}}</a>
+				<a class="strokeside">{{row.strokeSide}}</a>
+				<a class="stroketype">{{row.strokeType}}</a>
+				<a class="player1">{{row.player1}}</a>
+				<a class="player2">{{row.player2}}</a>
+				<a class="ball">{{row.ball}}</a>
+			</div>
+		</ng-container>
+	</div>
+</div>

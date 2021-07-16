@@ -1,0 +1,17 @@
+<div id="video-block" class="border-right fixed left">
+	<app-video (removeLastEvent)="removeLastEvent()" (serveSideAd)="serveSideAd($event)" (positionsStatus)="positionsStatus($event)" (writeEvent)="addEventToLog($event)" (playerShot)="playerShot($event)" (strokeType)="strokeType($event)" (strokeSide)="strokeSide($event)" (eventType)="eventType($event)" (highlightBallPoint)="highlightBallPoint()" (dehighlightBallPoint)="dehighlightBallPoint()" (dehighlightPlayerPoints)="dehighlightPlayerPoints()" (highlightPlayerPoint)="highlightPlayerPoint($event)" (resetAllPoints)="resetAllPoints()" (showPlayerPoint)="showPlayerPoint($event)" (showPoint)="showPoint($event)" (activatePoint)="activatePoint($event)" (highlightPoint)="highlightPoint($event)" (disactivatePoint)="disactivatePoint($event)" (calibrationMode)="calibrationMode($event)"></app-video>
+</div>
+<div id="tennis-court-block" class="center-align fixed right">
+	<app-tennis-court></app-tennis-court>
+</div>
+<div id="control-panel-block">
+	<app-control-panel (updateScorePanelWithEvent)="updateScorePanelWithEvent($event)" (eventUndoEvent)="eventUndoEvent()" (skipEvent)="skipEvent()" (saveEvent)="saveEvent($event)" (playerChangeEvent)="playerChangeEvent($event)" (changeEvent)="changeEvent()"></app-control-panel>
+</div>
+<div class="bottom-block">
+	<div id="score-panel-block">
+		<app-score-panel (gameResetEvent)="gameResetEvent()" (pointResetEvent)="pointResetEvent()" (savePointEvent)="savePointEvent($event)" (saveGameEvent)="saveGameEvent($event)" (saveSetEvent)="saveSetEvent($event)" (pointEvent)="pointEvent($event)"></app-score-panel>
+	</div>
+	<div id="data-panel-block">
+		<app-data-panel></app-data-panel>
+	</div>
+</div>

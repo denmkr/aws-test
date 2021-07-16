@@ -1,0 +1,54 @@
+<div class="events-controls" id="events-controls-block" [class.visible]="eventsControlsActive">
+	<div class="button-block visible">
+		<div class="button-label">Event type:</div>
+		<div class="buttons">
+			<div [class.active]="shotButtonActive" (click)="onShotButtonClick()" class="button">Hit</div>
+			<div [class.active]="!shotButtonActive" (click)="onBounceButtonClick()" class="button">Bounce</div>
+		</div>
+	</div>
+	<div [class.visible]="shotButtonActive" class="shot-block">
+		<div class="button-block visible">
+			<div class="button-label">Player:</div>
+			<div class="buttons">
+				<div [class.active]="p1ShotButtonActive" (click)="onP1ShotButtonClick()" class="button active">P1</div>
+				<div [class.active]="!p1ShotButtonActive" (click)="onP2ShotButtonClick()" class="button">P2</div>
+			</div>
+		</div>
+		<div class="button-block multi visible">
+			<div class="button-label">Stroke type:</div>
+			<div class="buttons">
+				<div [class.active]="groundstrokeButtonActive" (click)="onGroundButtonClick()" class="button active">Groundstroke</div>
+				<div [class.active]="volleyButtonActive" (click)="onVolleyButtonClick()" class="button">Volley</div>
+				<div [class.active]="serveButtonActive" (click)="onServeButtonClick()" class="button">Serve</div>
+			</div>
+		</div>
+		<div class="button-block" [class.visible]="!serveButtonActive">
+			<div class="button-label">Stroke side:</div>
+			<div class="buttons">
+				<div [class.active]="forehandButtonActive" (click)="onForehandButtonClick()" class="button active">Forehand</div>
+				<div [class.active]="!forehandButtonActive" (click)="onBackhandButtonClick()" class="button">Backhand</div>
+			</div>
+		</div>
+		<div class="button-block" [class.visible]="serveButtonActive">
+			<div class="button-inline">
+				<div class="button-label">Serve side:</div>
+				<div class="buttons">
+					<div [class.active]="deuceButtonActive" (click)="onDeuceButtonClick()" class="button">Deuce</div>
+					<div [class.active]="!deuceButtonActive" (click)="onAdButtonClick()" class="button">Ad</div>
+				</div>
+			</div>
+			<div class="button-inline">
+				<div class="button-label">Serve number:</div>
+				<div class="buttons">
+					<div [class.active]="firstServeButtonActive" (click)="onFirstServeButtonClick()" class="button">1st</div>
+					<div [class.active]="!firstServeButtonActive" (click)="onSecondServeButtonClick()" class="button">2nd</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="video-controls">
+	<div class="button gray" (click)="onSkipButtonClick()">Skip</div>
+	<div class="button green save-button" [class.visible]="saveButtonActive" (click)="onSaveButtonClick()">Save and Next</div>
+	<div class="button undo" (click)="onUndoButtonClick()">Undo</div>
+</div>

@@ -1,0 +1,49 @@
+.event-data-content {
+	overflow-y: scroll;
+	overflow-x: auto;
+	max-height: 100px;
+}
+
+.event-data-content a {
+	display: inline-block;
+}
+
+* {
+	font-size: 12px;
+	text-align: left;
+}
+
+
+.event-data-header a {
+	display: inline-block;
+	font-weight: 600;
+}
+
+.timestamp {
+	min-width: 86px;
+	width: 86px;
+}
+
+.event {
+	min-width: 52px;
+	width: 52px;
+}
+
+.player {
+	min-width: 48px;
+	width: 48px;
+}
+
+.strokeside {
+	min-width: 78px;
+	width: 78px;
+}
+
+.stroketype {
+	min-width: 100px;
+	width: 100px;
+}
+
+.player1, .player2, .ball {
+	min-width: 56px;
+}

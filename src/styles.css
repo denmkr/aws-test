@@ -1,0 +1,112 @@
+/* You can add global styles to this file, and also import other style files */
+html, body {
+	overflow: hidden;
+	margin: 0;
+}
+
+* {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+} 
+
+.row {
+	font-size: 0;
+}
+
+.row > * {
+	font-size: 14px;
+}
+
+.col-2 {
+	width: 16.66667%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.col-3 {
+	width: 25%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.col-9 {
+	width: calc(75% - 1px);
+	display: inline-block;
+	vertical-align: top;
+}
+
+.col-10 {
+	width: 83.33333%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.border-right {
+	border-right: 1px solid #ddd;
+}
+
+.center-align {
+	text-align: center;
+}
+
+.fixed {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+}
+
+.left {
+	left: 0;
+}
+
+.right {
+	right: 0;
+}
+
+.button {
+	border-radius: 5px;
+	background: steelblue;
+	color: #fff;
+	display: inline-block;
+	padding: 4px 8px;
+	font-weight: 400;
+	cursor: pointer;
+	margin: 0 3px;
+}
+
+.cancel-button {
+	background: rgb(204, 27, 27);
+}
+
+.complete-button {
+	background: green;
+}
+
+.modal-background {
+	background: rgba(0, 0, 0, 0.7);
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1000;
+	display: none;
+}
+
+.modal-background.active {
+	display: block;
+}
+
+.modal {
+	position: fixed;
+	background: #fff;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1001;
+	display: none;
+}
+
+.modal.active {
+	display: block;
+}
