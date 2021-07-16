@@ -17,5 +17,7 @@ RUN npm install -g @angular/cli@8.3.18
 RUN npm install d3
 RUN npm install tslib
 
+EXPOSE 4200
+
 # Start development server
 CMD sh -c "npm run start:docker"
