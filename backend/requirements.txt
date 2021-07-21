@@ -1,0 +1,8 @@
+Click==7.0
+Flask==1.1.1
+Flask-Cors==3.0.8
+psycopg2-binary==2.8.3
+matplotlib==3.3.2
+scipy==1.5.2
+numpy==1.19.2
+opencv-python==4.4.0.40

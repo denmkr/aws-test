@@ -9,6 +9,8 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class PositionProcessingService {
+  private url = 'http://ec2-18-191-69-206.us-east-2.compute.amazonaws.com';
+
   constructor(private http: HttpClient) { }
 
   getCourtPositionOfPoint(x: number, y: number) {
@@ -16,21 +18,21 @@ export class PositionProcessingService {
       .append('x', x.toFixed(2).toString())
       .append('y', y.toFixed(2).toString())
 
-    return this.http.get<any>('http://127.0.0.1:5000/api/homography/position', { params: httpParams, reportProgress: true });
+    return this.http.get<any>(this.url + ':5000/api/homography/position', { params: httpParams, reportProgress: true });
   }
 
   setHomography(points: any) {
     let pointsArray = [];
     points.forEach(p => { pointsArray.push([p.img_x, p.img_y]) });
 
-    return this.http.post<any>('http://127.0.0.1:5000/api/homography/set', JSON.stringify(pointsArray), { headers: httpOptions.headers });
+    return this.http.post<any>(this.url + ':5000/api/homography/set', JSON.stringify(pointsArray), { headers: httpOptions.headers });
   }
 
   setStrokeProperties(netPoints: any) {
     let pointsArray = [];
     netPoints.forEach(p => { pointsArray.push([p.img_x, p.img_y]) });
 
-    return this.http.post<any>('http://127.0.0.1:5000/api/stroke/set', JSON.stringify([pointsArray]), { headers: httpOptions.headers });
+    return this.http.post<any>(this.url + ':5000/api/stroke/set', JSON.stringify([pointsArray]), { headers: httpOptions.headers });
   }
 
   getStrokeSide(playerx: number, playery: number, ballx: number, bally: number, rightHand: boolean) {
@@ -41,7 +43,7 @@ export class PositionProcessingService {
       .append('bally', bally.toFixed(2).toString())
       .append('right_hand', rightHand.toString())
 
-    return this.http.get<any>('http://127.0.0.1:5000/api/stroke/side', { params: httpParams, reportProgress: true });
+    return this.http.get<any>(this.url + ':5000/api/api/stroke/side', { params: httpParams, reportProgress: true });
   }
 
   getStrokePlayer(player1X: number, player1Y: number, player2X: number, player2Y: number, ballX: number, ballY: number) {
@@ -53,6 +55,6 @@ export class PositionProcessingService {
       .append('ballx', ballX.toFixed(2).toString())
       .append('bally', ballY.toFixed(2).toString())
 
-    return this.http.get<any>('http://127.0.0.1:5000/api/stroke/player', { params: httpParams, reportProgress: true });
+    return this.http.get<any>(this.url + ':5000/api/api/stroke/player', { params: httpParams, reportProgress: true });
   }
 }
